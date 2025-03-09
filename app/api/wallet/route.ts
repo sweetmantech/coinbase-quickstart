@@ -1,13 +1,22 @@
 import { NextResponse } from "next/server";
-import wallet from "@/lib/coinbase/client";
+import { createSmartWallet } from "@coinbase/coinbase-sdk";
+import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
+import initCoinbaseSdk from "@/lib/coinbase/client";
 
 export async function GET() {
   try {
-    const publicKey = await wallet.getDefaultAddress();
+    initCoinbaseSdk();
+    const privateKey = generatePrivateKey();
+    const owner = privateKeyToAccount(privateKey);
+    const smartWallet = await createSmartWallet({
+      signer: owner,
+    });
+    // Get the smart wallet address
+    const smartWalletAddress = smartWallet.address;
 
     return NextResponse.json({
       success: true,
-      publicKey,
+      smartWalletAddress,
     });
   } catch (error) {
     console.error("Error fetching wallet public key:", error);

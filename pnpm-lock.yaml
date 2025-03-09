@@ -20,6 +20,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      viem:
+        specifier: ^2.23.8
+        version: 2.23.8(typescript@5.8.2)
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
