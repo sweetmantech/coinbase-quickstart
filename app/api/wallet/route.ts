@@ -16,10 +16,8 @@ export async function GET() {
     });
     const wallet = await getWallet();
     const faucetTransaction = await executeFaucet(wallet);
-    // Get the smart wallet address
     const smartWalletAddress = smartWallet.address;
     const transfer = await executeEthTransfer(wallet, smartWalletAddress);
-
     return NextResponse.json({
       success: true,
       smartWalletAddress,
