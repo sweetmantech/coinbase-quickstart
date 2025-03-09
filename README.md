@@ -10,6 +10,8 @@ A simple application to create and fund Coinbase Smart Wallets using the Coinbas
 - Mobile-responsive UI
 - Dark mode support
 
+![Screenshot 2025-03-08 at 9 55 34 PM](https://github.com/user-attachments/assets/c0552cc5-3922-4a29-9aea-54a2984fa98a)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
